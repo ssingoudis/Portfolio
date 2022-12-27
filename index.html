@@ -4,6 +4,41 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="index.css">
+  <script src="https://smtpjs.com/v3/smtp.js"> </script>
+  <script type="text/javascript">
+             
+var currentTime = new Date()
+anfrageUhrzeit = currentTime.toLocaleTimeString()
+anfrageDatum = currentTime.toLocaleDateString()
+
+function sendEmail() {
+            Email.send({
+            SecureToken : '9abf427f-50d6-4b92-8784-0fe58f9a1834',
+            To : 'stavrossingoudis@gmail.com',
+            From : 'stavrossingoudis@gmail.com',
+            Subject : "Neue Kundenanfrage von " + document.getElementById('name').value,
+            Body :  "<br> <b>Name: </b>" + document.getElementById('name').value +
+                    "<br>" +
+                    "<br> <b>E-Mail: </b>" + document.getElementById('mail').value +
+                    "<br>" +
+                    "<br> <b>Nachricht: </b>" + document.getElementById('message').value +
+                    "<br>" +
+                    "<br> <b>Datum der Anfrage: </b>" + anfrageDatum +
+                    "<br>" +
+                    "<br> <b>Uhrzeit der Anfrage: </b>" + anfrageUhrzeit +
+                    "<br>" +
+                    "<br> Geolocation?? evtl noch hinzufügen"
+                    
+         }).then(
+            message => alert('Ihr Nachricht wurde erfolgreich versendet')
+             );
+           }
+
+           function resetForm() {
+            document.getElementById('contactFormBody').reset()
+           }
+    
+    </script>
 </head>
 
 
@@ -39,13 +74,11 @@
     <p class="home__mainDescription">A Frontend focused Web Developer building the Frontend of Websites and Web <br>
       Applications that leads to the success of the overall 
       product</p> </div>
-      <button class="button" id="home">Projects</button>
+      <button class="button" id="home"><a href="#projects" class="href-unstyled">Projects</a></button>
       <div class="mouse"></div>
       <!--hier noch das coole logo, aber weiß nicht wie-->
   </div>
 </section>
-
-
 <section class="about">  
   <div class="main-container" id="about"> 
     <h2 id="about">About me <hr class="rounded"> </h2>
@@ -59,9 +92,7 @@
           <p>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin where I post useful content related to Web Development and Programming</p>
           <p>I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
           </p>
-          <button class="button" id="contactBT">Contact
-            <!-- <a href="#contact">Contact</a> -->
-          </button>
+          <button class="button" id="contactBT"><a href="#contact" class="href-unstyled">Contact</a></button>
         
         </div>
         <div class="about_mySkills">
@@ -92,7 +123,7 @@
         <img class="projects-image" src="img/placeholder-image-600x400.png">
       </div>
       <div class="projects-content">
-        <h3>Project Y</h3>
+        <h3>Project X</h3>
         <p class="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget mauris id ultrices. Nam a magna vitae mi aliquet ornare sed ac lacus. Aliquam lectus massa, molestie eu nibh a, molestie placerat tellus. Phasellus magna purus, 
           aliquet et rutrum id, dignissim at lorem. Nam nec facilisis nisl, at vestibulum ipsum. Pellentesque at tellus eget ante mollis tempus. Morbi mollis felis sed justo hendrerit ultricies. Cras vitae lacus sed sapien ultrices eleifend.
         </p> 
@@ -105,7 +136,7 @@
         <img class="projects-image" src="img/placeholder-image-600x400.png">
       </div>
       <div class="projects-content">
-        <h3>Project X</h3>
+        <h3>Project Y</h3>
         <p class="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget mauris id ultrices. Nam a magna vitae mi aliquet ornare sed ac lacus. Aliquam lectus massa, molestie eu nibh a, molestie placerat tellus. Phasellus magna purus, 
           aliquet et rutrum id, dignissim at lorem. Nam nec facilisis nisl, at vestibulum ipsum. Pellentesque at tellus eget ante mollis tempus. Morbi mollis felis sed justo hendrerit ultricies. Cras vitae lacus sed sapien ultrices eleifend.
         </p> 
@@ -138,16 +169,21 @@
     <h2>Contact <hr class="rounded"></h2>
     <div class="description">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
     </div>
+    
       <div class="contactContainer">
         <div class="contactContainer-wrapper">
+          <form method="post" id="contactFormBody" autocomplete="off">
         <label for="name" class="tfDescription">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter Your Name">
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
         <label for="mail" class="tfDescription">E-Mail</label>
-        <input type="text" id="mail" name="mail" placeholder="Enter Your E-Mail">
+        <input type="text" id="mail" name="mail" placeholder="Enter Your E-Mail" required>
 
         <label for="message" class="tfDescription">Message</label>
-        <textarea name="message" placeholder="Enter Your Message"></textarea>
-        <button class="button" id="submitBT">Submit</button>
+        <textarea name="message" id="message" placeholder="Enter Your Message" required></textarea>
+        <input type="button" value="submit" id="submitBT" onclick="sendEmail(); resetForm()"/>
+        
+      </form>
+
 
     </div>
  </div>  
