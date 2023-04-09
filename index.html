@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://smtpjs.com/v3/smtp.js"> </script>
+  <script src="//code.tidio.co/9klryaqyounvccegtlufrhurlujdqzvg.js" async></script>
+  <script type="text/javascript">
+             
+var currentTime = new Date()
+anfrageUhrzeit = currentTime.toLocaleTimeString()
+anfrageDatum = currentTime.toLocaleDateString()
+
+function sendEmail() {
+            Email.send({
+            SecureToken : '9abf427f-50d6-4b92-8784-0fe58f9a1834',
+            To : 'stavrossingoudis@gmail.com',
+            From : 'stavrossingoudis@gmail.com',
+            Subject : "Neue Kundenanfrage von " + document.getElementById('name').value,
+            Body :  "<br> <b>Name: </b>" + document.getElementById('name').value +
+                    "<br>" +
+                    "<br> <b>E-Mail: </b>" + document.getElementById('mail').value +
+                    "<br>" +
+                    "<br> <b>Nachricht: </b>" + document.getElementById('message').value +
+                    "<br>" +
+                    "<br> <b>Datum der Anfrage: </b>" + anfrageDatum +
+                    "<br>" +
+                    "<br> <b>Uhrzeit der Anfrage: </b>" + anfrageUhrzeit +
+                    "<br>" +
+                    "<br> Geolocation?? evtl noch hinzufügen"
+                    
+         }).then(
+          openPopup()
+          );
+            // message => alert('Ihr Nachricht wurde erfolgreich versendet')
+            //  );
+           }
+
+           function resetForm() {
+            document.getElementById('contactFormBody').reset()
+           }
+    
+    </script>
+</head>
+
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header_left-container">
+      <div class="header_logo">
+        <img src="img/face-drake.png" class="header_logo-img"> 
+      </div>
+        <div class="header_name"> Stavros Singoudis </div>
+      </div>
+
+      <div class="header_right-container">
+        <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav_link">Home</a> </li>
+          <li class="nav-item">
+            <a href="#about" class="nav_link">About</a> </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav_link">Projects</a> </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav_link">Contact</a> </li>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        
+      </div>
+    </nav>
+    </div>
+  </header>
+
+
+  <section class="home" id="home">
+  <div class="main-container" id="home">
+  <h1 class="home__h1">Hey, I'm Stavros</h1>
+    <div class="description">
+    <p class="home__mainDescription">A Frontend focused Web Developer building 
+      the Frontend of Websites and Web Applications that
+       leads to the success of the overall 
+      product</p> </div>
+      <button class="button" id="home"><a href="#projects" class="href-unstyled">Projects</a></button>
+      <div class="mouse">
+        
+      </div>
+  </div>
+</section>
+<section class="about">  
+  <div class="main-container" id="about"> 
+    <h2 id="about">About me <hr class="rounded"> </h2>
+    <div class="description">
+      <p class="p_about" id="about">Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
+      </p>
+    </div> 
+      <div class="about_content">
+        <div class="about_description">
+         <h3>Get to know me!</h3> 
+         <p>I'm a Frontend Web Developer building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section. </p>
+          <p>I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin where I post useful content related to Web Development and Programming</p>
+          <p>I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.<br>
+            <button class="button" id="contactBT"><a href="#contact" class="href-unstyled">Contact</a></button> <br>
+          </p>   
+        </div>
+        <div class="about_mySkills">
+          <h3 class="h3about__mySkills">My Skills</h3>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">Javascript</div>
+          <div class="skill">Responsive Design</div>
+          <div class="skill">SQL Basics</div>
+          <div class="skill">Project Management</div>
+          <div class="skill">Requirements Engineering</div>
+          <div class="skill" id="finalSkill">Software-Testing</div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="projects" id="projects"> 
+  <div class="main-container" id="projects"> 
+    <h2> Projects <hr class="rounded"></h2>
+    <div class="projects-main-container">
+      <p class="description" id="projects">Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
+      </p>
+    <div class="projects-content-grid">
+      <div class="projects-picture">
+        <img class="projects-image" src="img/placeholder-image-600x400.png">
+      </div>
+      <div class="projects-content">
+        <h3 class="h3__projects">Project X</h3>
+        <p class="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget mauris id ultrices. Nam a magna vitae mi aliquet ornare sed ac lacus. Aliquam lectus massa, molestie eu nibh a, molestie placerat tellus. Phasellus magna purus, 
+          aliquet et rutrum id, dignissim at lorem. Nam nec facilisis nisl, at vestibulum ipsum. Pellentesque at tellus eget ante mollis tempus. Morbi mollis felis sed justo hendrerit ultricies. Cras vitae lacus sed sapien ultrices eleifend.
+        </p> 
+        <p class="projects-button-wrap"><button class="case-study" id="..." href="...">Case Study</button>
+        </p>      
+      </div>  
+    </div>
+
+    <div class="projects-content-grid">
+      <div class="projects-picture">
+        <img class="projects-image" src="img/placeholder-image-600x400.png">
+      </div>
+      <div class="projects-content">
+        <h3 class="h3__projects">Project Y</h3>
+        <p class="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget mauris id ultrices. Nam a magna vitae mi aliquet ornare sed ac lacus. Aliquam lectus massa, molestie eu nibh a, molestie placerat tellus. Phasellus magna purus, 
+          aliquet et rutrum id, dignissim at lorem. Nam nec facilisis nisl, at vestibulum ipsum. Pellentesque at tellus eget ante mollis tempus. Morbi mollis felis sed justo hendrerit ultricies. Cras vitae lacus sed sapien ultrices eleifend.
+        </p> 
+        <p class="projects-button-wrap"><button class="case-study" id="..." href="...">Case Study</button>
+        </p>  
+      </div>  
+    </div>
+
+    <div class="projects-content-grid">
+      <div class="projects-picture">
+        <img class="projects-image" src="img/placeholder-image-600x400.png">
+      </div>
+      <div class="projects-content">
+        <h3 class="h3__projects">Project Z</h3>
+        <p class="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget mauris id ultrices. Nam a magna vitae mi aliquet ornare sed ac lacus. Aliquam lectus massa, molestie eu nibh a, molestie placerat tellus. Phasellus magna purus, 
+          aliquet et rutrum id, dignissim at lorem. Nam nec facilisis nisl, at vestibulum ipsum. Pellentesque at tellus eget ante mollis tempus. Morbi mollis felis sed justo hendrerit ultricies. Cras vitae lacus sed sapien ultrices eleifend. </p>
+          <p class="projects-button-wrap">
+          <button class="case-study" id="..." href="...">Case Study</button>
+        </p> 
+      </div>  
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="contact">
+  <div class="main-container" id="contact"> 
+    <h2>Contact <hr class="rounded"></h2>
+    <div class="description">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
+    </div>
+    
+      <div class="contactContainer">
+        <div class="contactContainer-wrapper">
+          <form method="post" id="contactFormBody" autocomplete="off">
+        <label for="name" class="tfDescription">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+        <label for="mail" class="tfDescription">E-Mail</label>
+        <input type="text" id="mail" name="mail" placeholder="Enter Your E-Mail" required>
+
+        <label for="message" class="tfDescription">Message</label>
+        <textarea name="message" id="message" placeholder="Enter Your Message" required></textarea>
+        <input type="button" value="submit" id="submitBT" onclick="sendEmail(); resetForm()"/>
+      </form>
+
+        <!-- Popup-Fesnter -->
+<div class="popup" id="popup">
+  <img src="img/Checkmark.png">
+  <h3>Vielen Dank für Ihre Kontaktanfrage!</h3>
+  <p>Ich werde mich schnellstmöglich mit Ihnen in Verbindung setzen.</p>
+  <button type="button" class="popupButton" onclick="closePopup()">OK</button>
+</div>
+
+        </div>
+      </div>  
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="footer_upper-container">
+<div class="footer_upper-container-main">
+  <div class="footer_upper-left-container">
+    <h4 class="h4_footer">Stavros Singoudis</h4>
+    <p class="p_footer">A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
+  </div>
+  <hr class="footer-divider-mobile">
+  <div class="footer_upper-right-container">
+    <h4 class="h4_footer" id="social">Social</h4>
+      <ul class="footer-icons-wrapper">
+        <li class="footer-icons-list"> 
+          <a href="..." class="footer-icons-link"><img class="footer-icons" src="img/Twitter-logo-transparent.png"></a></li>
+        <li class="footer-icons"> 
+          <a href="..." class="footer-icons-link"><img class="footer-icons" src="img/Linkedin-logo-round-transparent.png"></a></li>
+        <li class="footer-icons"> 
+          <a href="..." class="footer-icons-link"><img class="footer-icons" src="img/Discord-logo-transparent.png"></a></li>
+        <!-- <li class="footer-icons"> 
+          <a href="..." class="footer-icons-link"><img class="footer-icons" src="img/Telegram-logo-round-transparent.png"></a></li> -->
+      </ul>
+  </div>
+</div>
+
+      <hr class="footer-divider">
+
+<div class="footer_lower-container">© Copyright 2023. Made by 
+  <a href="..." class="footer_lower-name">Stavros Singoudis</a></div>
+</div>
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+Google PW:		uekzaxxhqabwzuet
+elasticMail PW:		FC292B3AC1FB63EEACB0BC2A871A95B739DB
+			smtp.elasticemail.com
+			2525
+
+security token	 	9abf427f-50d6-4b92-8784-0fe58f9a1834
